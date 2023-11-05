@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+signup
+{% endblock %}
+{% block content %}
+{% load static %}
+<style>
+    .container{
+         background-size: cover;
+    }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<br>
+<div style="background-image: url({% static '/images/bgm.jpg' %});" class="container">
+<h1 style="text-align:center;">Let's Signup</h1><br>
+<div class="col-1 text-left pl-md-3">
+<form style="margin-left: 16rem;" action="register" method="post">
+    {% csrf_token %}
+    <label style="text-align: center;">Name</label>
+    <input size="70" type="text" name="name" required><br>
+    <label style="text-align: center;">Place</label>
+    <input size="70" type="text" name="place" required><br>
+    <label style="text-align: center;">Phone</label>
+    <input size="70" type="number" name="phone" required><br>
+    <label style="text-align: center;">Email</label>
+    <input size="70" type="email" name="email" required><br>
+    <label style="text-align: center;">Username</label>
+    <input size="70" type="text" name="uname" required><br>
+    <label style="text-align: center;">Password</label>
+    <input size="70" type="password" name="pass" required><br><br>
+    <!-- <input type="Submit" value="Register"> -->
+    <button class="btn btn-success" type="submit">Signup</button><br><br><br><br><br><br>
+</form>
+    </div>
+</div>
+{% endblock %}
